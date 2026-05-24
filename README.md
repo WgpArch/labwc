@@ -24,3 +24,5 @@ Personal labwc compositor config with Waybar, weather, and theme switcher.
     ├── rc.xml          # Main config
     ├── waybar/         # Waybar config + weather scripts
     └── scripts/        # Helper scripts
+
+## 📸 Screenshots

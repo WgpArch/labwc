@@ -1,0 +1,257 @@
+{
+    "layer": "bottom",
+    "modules-left": ["custom/arch", "wlr/workspaces", "wlr/taskbar"],
+    "modules-center": [
+                        "clock", "custom/weather"
+                        ],
+    "modules-right": ["tray",
+                    "cpu", "memory", "temperature", 
+                    "custom/notification",
+                    "pulseaudio",
+                    "backlight",
+                    "network",
+                    "group/group-battery",
+                    "group/group-logout"
+                    ],
+    "tray": {
+        "spacing": 10
+    },
+    "cpu": {
+        "format": "　{usage}%"
+    },
+    "memory": {
+        "format": "　{}%"
+    },
+    "backlight": {
+        "format": "　{percent}%",
+        "format-icons": ["", ""],
+		"tooltip-format": "Switch themes",
+		"on-click": "~/.config/labwc/waybar/scripts/switch_themes.sh"
+    },
+    "battery": {
+        "interval": 1,
+        "format": "{icon} {capacity}%",
+        "states": {
+            "full": 95,
+            "great": 80,
+            "good": 70,
+            "well": 45,
+            "warning": 20,
+            "critical": 10
+        },
+        "format-icons": {
+            "default": "󱊣",
+            "discharging-full": "󱊣",
+            "discharging-great": "󱊣",
+            "discharging-good": "󱊢",
+            "discharging-well": "󱊡",
+            "discharging-warning": "󱊡",
+            "discharging-critical": "󰂃",
+            "charging-full": "󱊦 ",
+            "charging-great": "󱊦 ",
+            "charging-good": "󱊥 ",
+            "charging-well": "󱊤 ",
+            "charging-warning": "󱊤 ",
+            "charging-critical": "󰢟 "
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+            "on-discharging-critical": "notify-send -u critical 'Very low battery'",
+            "on-charging-full": "notify-send -u normal 'Battery charged'"
+        }
+    },
+    "network": {
+        "interval": 1,
+        "format-wifi": "　{signalStrength}%",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ethernet",
+        "format-disconnected": " ",
+        "on-click": "nm-connection-editor",
+        "tooltip-format": " {bandwidthDownBytes} 󰬬 {bandwidthUpBytes}",
+        "tooltip-format-ethernet": "{ifname}  {bandwidthDownBytes} 󰬬 {bandwidthUpBytes}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)     {bandwidthDownBytes} 󰬬 {bandwidthUpBytes}",
+        "tooltip-format-disconnected": "Disconnected"
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-icons": {
+            "default-muted": "",
+            "bluetooth": "",
+            "headphones": "",
+            "headset": "",
+            "phone": "",
+            "phone-muted": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "max-volume": 100,
+        "on-click": "kitty alsamixer"
+    },
+    "temperature": {
+        "critical-threshold": 60,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [""]
+    },
+    "clock": {
+        "interval": 1,
+        "tooltip-format": "<big>{:%b %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%b %d %H:%M:%S %p}",
+        "format-alt": "{:%Y-%m-%d}",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "week-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months":     "<span><b>{}</b></span>",
+                "days":       "<span><b>{}</b></span>",
+                "weeks":      "<span><b>W{}</b></span>",
+                "weekdays":   "<span><b>{}</b></span>",
+                "today":      "<span><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "power-profiles-daemon": {
+          "format": "{icon} ",
+          "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+          "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+          }
+    },
+    "wlr/workspaces": {
+          "active-only": false,
+          "all-outputs": true,
+          "format": "{icon}",
+          "format-icons": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "",
+          "6": "",
+          "7": "",
+          "8": "",
+          "9": "",
+          "10": "",
+          "11": "",
+          "default": ""
+    },
+    "on-click": "activate",
+    "on-scroll-up": "labwc-cycle-workspace -1",
+    "on-scroll-down": "labwc-cycle-workspace 1"
+},
+
+     "custom/arch": {
+        "format": "󰣇 ",
+        "on-click": "rofi -show drun -theme ~/.config/labwc/waybar/config.rasi",
+        "tooltip": true,
+        "tooltip-format": "btw 😎"
+},
+
+    "custom/power": {
+        "format": "{icon} ",
+        "format-icons": [""],
+        "on-click": "poweroff",
+        "tooltip-format": "Power off"
+    },
+    "custom/reboot": {
+        "format": "{icon} ",
+        "format-icons": [""],
+        "on-click": "reboot",
+        "tooltip-format": "Reboot"
+    },
+    "custom/logout": {
+        "format": "{icon} ",
+        "format-icons": [" "],
+        "on-click": "~/.config/labwc/scripts/logout.sh",
+        "tooltip-format": "Logout"
+},
+    "custom/lock": {
+        "format": "{icon} ",
+        "format-icons": [""],
+        "on-click": "swaylock",
+        "tooltip-format": "Lock Screen"
+},
+    "custom/sleep": {
+        "format": "{icon} ",
+        "format-icons": [""],
+        "on-click": "zzz",
+        "tooltip-format": "Sleep"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "~/.config/mango/waybar1/weather/waybar/scripts/weather/get_weather.rb",
+        "on-click": "~/.config/mango/waybar1/weather/waybar/scripts/weather/get_weather.rb --next",
+        "return-type": "json"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 20,
+        "spacing": 3,
+        "on-click": "minimize",         
+        "on-click-middle": "close",
+        "on-click-right": "maximize",
+        "tooltip-format": "{title}"
+},
+      "custom/notification": {
+        "tooltip": false,
+        "format": "{icon} ",
+        "format-icons": {
+          "notification": "<span foreground='red'><sup><small></small></sup></span>",
+          "none": "",
+          "dnd-notification": "<span foreground='red'><sup><small></small></sup></span>",
+          "dnd-none": "",
+          "inhibited-notification": "<span foreground='red'><sup><small></small></sup></span>",
+          "inhibited-none": "",
+          "dnd-inhibited-notification": "<span foreground='red'><sup><small></small></sup></span>",
+          "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+      },
+      "group/group-logout": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/power",
+            "custom/lock",
+            "custom/reboot",
+            "custom/logout",
+            "custom/sleep"
+        ],
+        "drawer": {
+            "children-class": "not-power",
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        }
+      },
+      "group/group-battery": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ],
+        "drawer": {
+            "children-class": "not-battery",
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        }
+      }
+}

@@ -26,3 +26,7 @@ Personal labwc compositor config with Waybar, weather, and theme switcher.
     └── scripts/        # Helper scripts
 
 ## 📸 Screenshots
+
+![Screenshot 1](labwc_screenshot_2026-05-24_17-40-09.jpg)
+![Screenshot 2](labwc_screenshot_2026-05-24_17-40-38.jpg)
+![Screenshot 3](labwc_screenshot_2026-05-24_17-41-13.jpg)

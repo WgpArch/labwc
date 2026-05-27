@@ -1,29 +1,31 @@
+# Labwc Dotfiles
+
 <div align="center">
 
-  <img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
-  <img src="https://img.shields.io/badge/Wayland-00B4F0?style=for-the-badge&logo=wayland&logoColor=white" alt="Wayland">
-  <img src="https://img.shields.io/badge/Labwc-FFFFFF?style=for-the-badge&logo=openbox&logoColor=white" alt="Labwc">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License">
+[![View Documentation](https://img.shields.io/badge/View-Documentation-blue?style=for-the-badge)](https://wgparch.codeberg.page/labwc/)
 
-  <br><br>
+<img src="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white" alt="Arch Linux">
+<img src="https://img.shields.io/badge/Wayland-00B4F0?style=for-the-badge&logo=wayland&logoColor=white" alt="Wayland">
+<img src="https://img.shields.io/badge/Labwc-FFFFFF?style=for-the-badge&logo=openbox&logoColor=white" alt="Labwc">
+<img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License">
 
-  Lightweight Openbox-style Wayland Compositor on Arch Linux.
+<br><br>
+
+Lightweight Openbox-style Wayland Compositor on Arch Linux.
 
 </div>
 
 ---
 
+## ✨ Features
+- **Classic Aesthetics:** Clearlooks-3.4 theme with 8px rounded corners.
+- **Waybar Drawers:** Grouped power and battery modules that expand on hover.
+- **Theme Switcher:** Click the backlight icon in Waybar to switch themes.
+- **Openbox Familiarity:** XML configuration with standard key/mouse bindings.
 
-# labwc Config for Arch Linux
+## 📖 Documentation & Installation
 
-Personal labwc compositor config with Waybar, weather, and theme switcher.
-
-## 📁 Structure
-~/.dotfiles/labwc/
-└── configs/labwc/
-    ├── rc.xml          # Main config
-    ├── waybar/         # Waybar config + weather scripts
-    └── scripts/        # Helper scripts
+For full instructions, keybinds, and Waybar configuration, please visit the **[Official Documentation Website](https://wgparch.codeberg.page/labwc/)**.
 
 ## 📸 Screenshots
 

@@ -1,0 +1,17 @@
+site_name: WgpArch Labwc Config
+site_url: https://wgparch.codeberg.page/labwc/
+theme:
+  name: material
+  palette:
+    primary: grey
+    accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.expand
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Keybinds: keybinds.md
+  - Waybar & Scripts: waybar.md
+  - Look & Feel: theming.md
+  - Gallery: gallery.md
